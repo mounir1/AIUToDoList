@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body data-ng-app="Todo">
+    <div class="page-container" data-ng-controller="TodoCtrl">
+      <h2>Todo</h2>
+      <ul class="todo-list" data-ng-repeat="todo in todos track by $index">
+        <li>
+          <span>{{ todo.title }}</span>
+          {{$index}}
+          <button class="bt bt-achieve" ng-click="done(todo.$id)">Done</button>
+        </li>
+      </ul>
+      
+      <ul class="add-todo">
+        <li>
+           <button class="bt bt-achieve" ng-click="add()">add</button>
+         <input type="text" 
+                class="txt" 
+                data-ng-model="newTodo"
+                placeholder="New Todo" 
+                 />
+                 
+        </li>
+      </ul>
+      
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.js"></script>
+    <script src="script.js"></script>
+  </body>
+
+</html>
