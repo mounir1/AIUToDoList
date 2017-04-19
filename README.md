@@ -1,5 +1,6 @@
 # ToDoList
 check the updated version (branch) with firebase 3
+
 simple project for the Hackathon event at Antalya International University 
 demonstrate the use of Angular js on building cross platform apps 
 and also the use of Firebase integration to sync data online.
