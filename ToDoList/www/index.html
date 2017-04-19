@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>AIU CodeClub ToDoList</title>
-
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <script src="cordova.js"></script>
-
-    
-    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-
-    
-    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
-
-
-    <script src="js/app.js"></script>
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body ng-app="starter" ng-controller="ListCtrl">
-<ion-header-bar class="bar-assertive" align-title="center">    
-    <h1 class="title">AIU Code Club</h1>
-      <button class="button button-icon ion-compose" ng-click="addItem()"></button>
-    </ion-header-bar>
 
-    <ion-content>
-      <ion-list>
-        <ion-item ng-repeat="item in items" ng-class="{completed: item.status == &apos;Completed&apos;}">
-          {{item.name}}
-            
-          <ion-option-button class="button-royal" ng-click="CompleteTask(item)">
-              <ion-reorder-button class="ion-drag"></ion-reorder-button>
-              <ion-option-button class="icon button-assertive ion-android-delete " ng-click="DeleteItem(item)"> </ion-option-button>
-            <i class="icon ion-checkmark"></i>
-          </ion-option-button>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-      <ion-tabs class="tabs-calm">
-          <ion-tab icon="ion-home "></ion-tab>
-          <ion-tab icon="ion-social-googleplus "></ion-tab>
-          <ion-tab icon="ion-social-facebook"></ion-tab>
-          <ion-tab icon="ion-android-document "></ion-tab>
-          <ion-tab icon="ion-calendar"></ion-tab>
-          <ion-tab href="mailto:mounir1badi@gmail.com" icon="ion-android-mail"></ion-tab>
-          
-          
+  <body data-ng-app="Todo">
+    <div class="page-container" data-ng-controller="TodoCtrl">
+      <h2>Todo</h2>
+      <ul class="todo-list" data-ng-repeat="todo in todos track by $index">
+        <li>
+          <span>{{ todo.title }}</span>
+          {{$index}}
+          <button class="bt bt-achieve" ng-click="done(todo.$id)">Done</button>
+        </li>
+      </ul>
+      
+      <ul class="add-todo">
+        <li>
+           <button class="bt bt-achieve" ng-click="add()">add</button>
+         <input type="text" 
+                class="txt" 
+                data-ng-model="newTodo"
+                placeholder="New Todo" 
+                 />
+                 
+        </li>
+      </ul>
+      
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
 
-      </ion-tabs>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.js"></script>
+    <script src="script.js"></script>
   </body>
+
 </html>
