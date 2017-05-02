@@ -1,5 +1,5 @@
 # ToDoList
-check the updated version (branch) with firebase 3 http://tasksapp.stamplayapp.com or educaper.com/todos.html 
+check the updated version (branch) with firebase 3 http://tasksapp.stamplayapp.com or http://educaper.com/todos.html 
 
 simple project for the Hackathon event at Antalya International University 
 demonstrate the use of Angular js on building cross platform apps 
